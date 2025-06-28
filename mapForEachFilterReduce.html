@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+
+<body>
+    <script>
+
+        const numbers = [1, 2, 3, 4, 5];
+
+        numbers.forEach((number) => {
+            console.log("For each", number);
+        });
+
+
+        numbers.map((number, index) => {
+            console.log("Map", number, index);
+        });
+
+
+        const filteredNumbers = numbers.filter((number) => {
+            if (number % 2 === 0) {
+                return true; // Keep even numbers
+            }
+            console.log("Filter", number);
+
+        });
+        console.log("Filtered numbers ", filteredNumbers);
+
+        const reducedValue = numbers.reduce((accumulator, currentValue) => {
+            console.log("Reduce", accumulator, currentValue);
+            return accumulator + currentValue;
+        }, 0);
+
+        console.log("FILETER");
+
+        function countStringOccurrences(arr, str) {
+            return arr.filter(item => item === str);
+        }
+
+        const myArray = ["apple", "banana", "apple", "orange", "apple"];
+        const stringToCount = "apple";
+        const occurrences = countStringOccurrences(myArray, stringToCount);
+        console.log(occurrences); // Output: 3
+
+        function getHello() {
+            var hello = "Hello world";
+            return console.log(hello);
+        }
+
+        const hello = getHello();
+        console.log(typeof (hello)); // Output: undefined
+
+
+        function greetHello() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Hello world");
+                    reject("Rejected");
+                }, 2);
+            });
+        }
+
+        const xyz = greetHello();
+        console.log("XYZ value: ", xyz);
+        xyz.then(a => console.log(a));
+        // PROMISES 
+
+        const promise = new Promise((resolve, reject) =>{
+            const succc = false;    
+
+            if(succc){
+                resolve("Successfull");
+            }
+            if(!succc){
+                reject("Unsuccessfull");
+            }
+        })
+        
+        promise.then(a => console.log(a));
+        
+    </script>
+</body>
+
+</html>
